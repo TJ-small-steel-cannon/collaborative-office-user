@@ -11,7 +11,7 @@ import '@/assets/styles/index.scss' // global css
 
 import App from './App'
 import store from './store'
-import router from './router'
+import router, {constantRoutes} from './router'
 import directive from './directive' // directive
 
 // 注册指令
@@ -43,6 +43,7 @@ import ImageUpload from "@/components/ImageUpload"
 import ImagePreview from "@/components/ImagePreview"
 // 字典标签组件
 import DictTag from '@/components/DictTag'
+import usePermissionStore from "@/store/modules/permission.js";
 
 const app = createApp(App)
 
@@ -80,5 +81,6 @@ app.use(ElementPlus, {
   // 支持 large、default、small
   size: Cookies.get('size') || 'default'
 })
-
+usePermissionStore().setSidebarRouters(constantRoutes)
+usePermissionStore().setDefaultRoutes(constantRoutes)
 app.mount('#app')
