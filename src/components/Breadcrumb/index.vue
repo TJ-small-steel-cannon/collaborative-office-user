@@ -21,6 +21,7 @@ function getBreadcrumb() {
   // only show routes with meta.title
   let matched = []
   const pathNum = findPathNum(route.path)
+  console.log(pathNum)
   // multi-level menu
   if (pathNum > 2) {
     const reg = /\/\w+/gi
@@ -28,6 +29,7 @@ function getBreadcrumb() {
       if (index !== 0) item = item.slice(1)
       return item
     })
+    console.log("pathList"+pathList)
     getMatched(pathList, permissionStore.defaultRoutes, matched)
   } else {
     matched = route.matched.filter((item) => item.meta && item.meta.title)
@@ -37,6 +39,7 @@ function getBreadcrumb() {
     matched = [{ path: "/index", meta: { title: "首页" } }].concat(matched)
   }
   levelList.value = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false)
+  console.log(levelList.value)
 }
 function findPathNum(str, char = "/") {
   let index = str.indexOf(char)

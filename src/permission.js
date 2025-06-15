@@ -52,7 +52,9 @@ router.beforeEach((to, from, next) => {
       // } else {
       //   next()
       // }
-      usePermissionStore().setSidebarRouters(constantRoutes)
+      // console.log(111111111111111)
+      // usePermissionStore().setSidebarRouters(constantRoutes)
+      // usePermissionStore().setDefaultRoutes(constantRoutes)
       next()
     }
   } else {
