@@ -1,10 +1,11 @@
 <template>
   <div class="app-container">
-    <p>图书借阅页面</p>
+    <book-table></book-table>
   </div>
 </template>
 
 <script setup>
+import BookTable from '@/views/book/bookRental/BookTable/BookTable.vue'
 
 </script>
 
