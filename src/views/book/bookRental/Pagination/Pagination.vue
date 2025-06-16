@@ -19,7 +19,7 @@ import {ElMessage} from 'element-plus'
 const emit = defineEmits(['pagechange']) // 声明可触发的事件名
 
 // 当前页码
-var currentPage = ref(3)
+var currentPage = ref(1)
 // 每页数量
 const pageSize = ref(20)
 
