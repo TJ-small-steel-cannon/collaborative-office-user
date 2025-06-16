@@ -1,6 +1,5 @@
 <template>
   <div class="app-container">
-
     <book-table></book-table>
   </div>
 </template>
