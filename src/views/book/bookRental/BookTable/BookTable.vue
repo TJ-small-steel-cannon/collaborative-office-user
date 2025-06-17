@@ -13,7 +13,8 @@
           <el-button
               type="primary"
               size="small"
-              @click="handleBorrow(scope.row)"
+              @click="goView(scope.row)"
+
           >
             查看
           </el-button>
@@ -46,12 +47,12 @@ const bookList = ref([])
 const loading = ref(false)
 //搜索框查到的数据
 const handleSearchResult = (data) => {
-  console.log("搜索查到的数据是"+data)
+  console.log("搜索查到的数据是111"+data)
   bookList.value = data.data
 }
 //翻页获得的新数据
 const handpagechange = (data)=>{
-  console.log("搜索查到的数据是"+data)
+  console.log("搜索查到的数据是222"+data)
   bookList.value = data.data
 }
 // 获取图书数据
@@ -69,6 +70,10 @@ const fetchBooks = async () => {
   }
 }
 
+//查看
+const goView=()=>{
+  console.log(123)
+}
 // 组件挂载时自动获取数据
 onMounted(() => {
   fetchBooks()
