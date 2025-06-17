@@ -1,6 +1,10 @@
 <template>
   <div class="app-container">
-    服务器借阅页面
+    服务器租借记录管理
+    <div>
+
+    </div>
+
   </div>
 </template>
 
