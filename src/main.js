@@ -83,4 +83,5 @@ app.use(ElementPlus, {
 })
 usePermissionStore().setSidebarRouters(constantRoutes)
 usePermissionStore().setDefaultRoutes(constantRoutes)
+
 app.mount('#app')

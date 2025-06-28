@@ -10,9 +10,11 @@
       <el-table-column prop="isbn" label="索书号" />
       <el-table-column label="操作" >
         <template #default="scope">
+
           <CheckView :row-data="scope.row"></CheckView>
 <!--          借阅-->
           <Borrowing ref="borrowDrawer" />
+
           <el-button
               type="success"
               size="small"
@@ -73,6 +75,7 @@ const openBorrowDrawer = (rowData) => {
 };
 //搜索框查到的数据
 const handleSearchResult = (data) => {
+
   console.log("搜索查到的数据是"+data)
   bookList.value = data
 }
@@ -98,6 +101,7 @@ const getList = async () => {
     console.error('请求失败:', error);
   }
 };
+
 // 获取图书数据
 const fetchBooks = async () => {
   try {
