@@ -70,10 +70,10 @@ const handleSearch = () => {
   if (categoryId.value) params.categoryId = categoryId.value
 
   // 发送搜索请求
-  axios.get('/dev-api/api/book', { params })
+  axios.get('/dev-api/api/student/book/bookList', { params })
       .then(response => {
         // 触发自定义事件，将搜索结果传递给父组件
-        emit('search-result', response.data)
+        emit('search-result', response.data.data.data)
       })
       .catch(error => {
         console.error('搜索失败:', error)
