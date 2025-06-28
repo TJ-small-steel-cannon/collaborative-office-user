@@ -68,73 +68,79 @@
         />
       </div>
     </el-card>
-    <el-drawer v-model="drawer" :direction="direction">
-      <template #header>
-        <h1>标题</h1>
-      </template>
-      <template #default>
-        <form>
-          <el-form-item label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>服务器编号</span>
-              </div>
-            </template>
-            xxx
-          </el-form-item>
-          <el-form-item label="服务器名称" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>服务器编号</span>
-              </div>
-            </template>
-          </el-form-item>
-          <el-form-item label="CPU核数" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>CPU核数</span>
-              </div>
-            </template>
-          </el-form-item>
-          <el-form-item label="内存" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>内存</span>
-              </div>
-            </template>
-          </el-form-item>
-          <el-form-item label="硬盘" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>硬盘</span>
-              </div>
-            </template>
-          </el-form-item>
-          <el-form-item label="用途" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>开发</span>
-              </div>
-            </template>
-          </el-form-item>
-          <el-form-item label="实时空闲资源" label-width="120" label-position="left">
-            <template #label>
-              <div style="display: flex;align-items: center;">
-                <el-icon size="24"><MostlyCloudy /></el-icon>
-                <span>5</span>
-              </div>
-            </template>
-          </el-form-item>
 
-        </form>
-      </template>
+    <el-drawer v-model="drawer"  :with-header="false">
+      <form>
+        <el-form-item>
+          <h1>SOO2</h1>
+        </el-form-item>
+        <el-form-item label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><MostlyCloudy /></el-icon>
+              <span>服务器id</span>
+            </div>
+          </template>
+          <span>1</span>
+        </el-form-item>
+        <el-form-item label="服务器名称" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><MostlyCloudy /></el-icon>
+              <span>服务器名称</span>
+            </div>
+          </template>
+          <span>xxx</span>
+        </el-form-item>
+        <el-form-item label="CPU核数" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><Connection /></el-icon>
+              <span>CPU核数</span>
+            </div>
+          </template>
+          <span>16</span>
+        </el-form-item>
+        <el-form-item label="内存" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><DataBoard /></el-icon>
+              <span>内存(GB)</span>
+            </div>
+          </template>
+          <span>128.0</span>
+        </el-form-item>
+        <el-form-item label="硬盘容量" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><DataBoard /></el-icon>
+              <span>硬盘容量</span>
+            </div>
+          </template>
+          <span>1024</span>
+        </el-form-item>
+        <el-form-item label="服务器类型" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><MostlyCloudy /></el-icon>
+              <span>服务器类型</span>
+            </div>
+          </template>
+          <span>暂停使用</span>
+        </el-form-item>
+        <el-form-item label="拒绝原因" label-width="150" label-position="left">
+          <template #label>
+            <div style="display: flex;align-items: center;">
+              <el-icon size="18"><MostlyCloudy /></el-icon>
+              <span>拒绝原因</span>
+            </div>
+          </template>
+          <span>xxxxxxxxxx</span>
+        </el-form-item>
+
+      </form>
     </el-drawer>
+
   </div>
 </template>
 
@@ -176,6 +182,11 @@ function cancelClick() {
 //确定
 function confirmClick() {
   drawer.value = false
+}
+
+//分页器点击事件
+function getList(val) {
+  console.log('分页器点击事件:', val)
 }
 
 //测试数据
@@ -235,6 +246,13 @@ const radio1 = ref('Option 1')
 .app-container {
   .header {
     margin: 15px;
+  }
+ h1{
+   font-size: 30px;
+ }
+  span{
+    font-size: 16px;
+    font-weight: 300;
   }
 }
 
